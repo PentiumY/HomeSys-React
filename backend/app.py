@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify
 import json
 import os
 import time
+import socket
+from threading import Thread
+import asyncio
 
 app = Flask(__name__)
 
@@ -9,7 +12,9 @@ port='8001'
 host='localhost'
 
 items = {
-    1: {"title": "Main Light", "state": True}
+    1: {"title": "Main Light", "state": False},
+    2: {"title": "Bedroom Light", "state": False},
+    3: {"title": "Bedroom Light 2", "state": False},
 }
 
 logTemplate = {
@@ -41,18 +46,14 @@ def getItemByName(name):
     return None
 
 def registerItemInteraction(data, address):
-    name = data["name"]
-    stateToSet = data["isChecked"]
-
-    print(address)
-
-    itemID = getItemByName(name)
+    itemID = data["id"]
+    stateToSet = data["state"]
+    name = items[itemID]["title"]
     currentItemState = getItemState(itemID)
 
     setItemState(itemID, stateToSet, address)
 
     print(f"{name} setting from {currentItemState} to {stateToSet}. Result: {getItemState(itemID)}")
-
 
 @app.route('/')
 def hello():
@@ -62,7 +63,11 @@ def hello():
 def get_data():
     data = request.json
     address = request.remote_addr
+
+    #print(data["state"])
+
     registerItemInteraction(data, address)
+    
     return jsonify({'received_data': data,'ip': address}), 200
 
 @app.route('/endpoint', methods=['GET'])
@@ -72,3 +77,4 @@ def send_data():
 
 if __name__ == '__main__':
     app.run(debug=True, host=host, port=port)
+    
