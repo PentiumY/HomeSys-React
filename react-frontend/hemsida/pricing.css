@@ -7,6 +7,9 @@ body {
 
 }
 
+
+
+
 * {
     padding: 0;
     margin: 0;
@@ -132,7 +135,11 @@ article h1 {
 	margin-top: 0px;
 	
 }
-
+.content img {
+    width: 100%; /* Ensures the image covers the full width of the content area */
+    height: auto; /* Maintains aspect ratio */
+    aspect-ratio: 16 / 9; 
+}
 
 .content h2 {
     color: #22a6e5;
