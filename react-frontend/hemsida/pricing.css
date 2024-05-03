@@ -126,26 +126,22 @@ article h1 {
 .content {
     max-width: 800px;
     margin: 150px auto;
-    padding: 200px 20px;
+    padding: 100px 20px;
     text-align: left;
 	margin-bottom: 100px;
+	margin-top: 0px;
 	
 }
 
-.content2 {
-    max-width: 1000px;
-	margin: 150px auto;
-    padding: 200px 20px;
-    text-align: left;
-}
 
 .content h2 {
     color: #22a6e5;
-    font-size: 42px;
+    font-size: 36px;
     margin-bottom: 20px;
 	text-align: center;
     font-family: 'Helvetica', sans-serif; 
 	font-weight: 80;
+	margin-top: 0px;
 }
 
 .content p {
