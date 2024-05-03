@@ -33,7 +33,7 @@ Article {
 
 .logo img {
     width: 80px; 
-	margin-left: 150px;
+	margin-left: 200px;
     height: auto; 
     vertical-align: middle; 
 }
@@ -41,7 +41,7 @@ Article {
 .company-name {
     font-family: 'Righteous', sans-serif; 
 	margin-left: 15px;
-    font-size: 54px; 
+    font-size: 44px; 
     color: #FFF; 
 }
 
@@ -67,7 +67,7 @@ ul li a {
     color: #FFF;
     text-decoration: none;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
     transition: background-color 0.3s;
 	
 }
@@ -139,6 +139,7 @@ article h1 {
     width: 100%; /* Ensures the image covers the full width of the content area */
     height: auto; /* Maintains aspect ratio */
     aspect-ratio: 16 / 9; 
+    border-radius: 10px;
 }
 
 .content h2 {
@@ -231,7 +232,6 @@ article h1 {
     color: #666;
 }
 
-
 a {
     text-decoration: none; 
 	color: inherit; 
@@ -239,3 +239,4 @@ a {
 a:hover {
     text-decoration: none; 
 }
+
