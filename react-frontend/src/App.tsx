@@ -200,7 +200,7 @@ function AccountMenu() {
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Typography sx={{ minWidth: 100 }}>Home</Typography>
+        <Typography sx={{ minWidth: 100 }}>     <a target="_blank" href={process.env.PUBLIC_URL + "/hemsida/" + "index.html"} > Home</a></Typography>
         <Typography sx={{ minWidth: 100 }}>Configuration</Typography>
         <Tooltip title="Account settings">
           <IconButton
